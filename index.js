@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const redis = require('redis');
+// on createClient, if user did not input any url
+// redis will assign the default url localhost:6379
 const client = redis.createClient();
 
 app.get('/', async(req, res, next) => {
